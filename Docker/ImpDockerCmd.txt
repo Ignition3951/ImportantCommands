@@ -1,0 +1,49 @@
+docker images
+docker ps
+docker stop
+docker build -t utk1311/spring-3-example-docker .
+docker images | head
+docker tag kubia luksa/kubia
+docker rm kubia-container
+docker stop kubia-container
+docker exec -it kubia-container bash-->commands didnt work in bash
+docker run --name kubia-container -p 8080:8080 -d kubia
+docker images
+docker build -t kubia .
+docker push luksa/kubia
+docker run -p 8080:8080 -d luksa/kubia
+
+process to make changes in docker:
+	make changes in the project
+	run mvn clean and mvn install
+	run docker build -t kubia .
+	run docker push luksa/kubia
+	run docker run -p 8080:8080 -d luksa/kubia
+
+Steps to install docker in ubuntu lts:
+	
+	sudo apt update
+	sudo apt install docker.io -y
+	sudo systemctl enable docker --now
+	docker --version
+	
+
+Executing the Docker Command Without Sudo:
+
+	sudo usermod -aG docker $USER
+	newgrp docker
+	docker run hello-world
+
+
+Trying to run a java program inside docker:
+	Go to /etc/docker inside the vm created
+	create a folder structure
+	make docker file in it
+	run docker build command --> an image will be created from this command
+	run the docker run command --> a container will be created using the image we built earlier
+	After running the above command the container will run and exit --> the container will not be shown by "docker ps" command
+	as it has already exited we have to use "docker ps -a" to show the container
+	The container created can be found on the path "/var/lib/docker/containers". This will be having all the details regarding the particular container.
+	
+	
+

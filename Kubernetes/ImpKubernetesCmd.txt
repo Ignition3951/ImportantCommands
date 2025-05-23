@@ -1,0 +1,104 @@
+kubectl apply -f C:\Users\UTKARSH\AppData\Local\Jenkins\.jenkins\workspace\Springboot-V1\deployments\deployment.yaml
+
+kubectl set image deployment springboot-v1 infotrends=utkarsh/springboot-v1:%version%
+
+kubectl get deployments --all-namespaces--> get all the deployments
+
+To list all deployments:
+
+kubectl get deployments --all-namespaces
+Then to delete the deployment:
+
+kubectl delete -n NAMESPACE deployment DEPLOYMENT
+Where NAMESPACE is the namespace it's in, and DEPLOYMENT is the name of the deployment. If NAMESPACE is default, leave off the -n option altogether.
+
+In some cases it could also be running due to a job or daemonset. Check the following and run their appropriate delete command.
+
+kubectl get jobs
+
+kubectl get daemonsets.app --all-namespaces
+
+kubectl get daemonsets.extensions --all-namespaces
+
+
+Description				Command
+Get Kubectl version			kubectl version
+Get details on Kubernetes cluster	kubectl cluster-info
+Get details about a node		kubectl describe nodeName
+Get details about a pod			kubectl describe podName
+List of all pods			kubectl get pods
+List of all services			kubectl get services
+List of all deployments			kubectl get deployments
+
+winpty kubectl exec -i -t springdocker-rs-94qdg -- bash--> run shell commands in pod
+
+kubectl cluster-info
+kubectl delete pod my-pod --force
+kubectl run springdocker-2 --image=utk1311/springdocker --port=8081 --expose
+minikube service springdocker-2-->to get the exposed url of the service
+
+kubectl logs kubia-manual
+kubectl logs kubia-manual -c kubia--> -c container name in case of multiple logs
+kubectl logs mypod --previous--> logs of previous container
+kubectl describe po kubia-liveness--->reason for restart
+The following
+ command will forward your machine’s local port 8888 to port 8080 of your kubia
+manual pod: kubectl port-forward kubia-manual 8888:8080 (Note: The port exposed in the docker file should match this port in order to access the pod
+For e.g. 8080 should match EXPOSE 8081 in dockerfile)
+
+ kubectl get po --show-labels
+ kubectl get po -L creation_method,env
+ kubectl get pods -L app
+kubectl label po kubia-manual creation_method=manual
+kubectl label po kubia-manual-v2 env=debug --overwrite
+
+kubectl get po -l creation_method=manual
+kubectl get po -l env
+kubectl get po -l '!env'
+
+
+kubectl annotate pod kubia-manual mycompany.com/someannotation="foo bar"
+kubectl describe pod kubia-manual
+
+
+ kubectl get po --namespace kube-system
+
+kubectl create namespace custom-namespace
+
+ kubectl create -f kubia-manual.yaml -n custom-namespace
+
+kubectl delete po kubia-gpu
+
+ kubectl scale rc kubia --replicas=10
+
+kubectl get rs
+
+ kubectl get node
+
+kubectl get jobs
+kubectl get po
+kubectl get po -a
+kubectl logs batch-job-28qf4
+kubectl get job
+
+kubectl delete all --all
+
+kubectl get rc--> instead of rc use rs for replication set
+
+winpty kubectl exec -i -t springdocker-rs-94qdg -- bash--> to get inside the container of pod
+
+curl http://springdocker-service/home-->inside the container access the url by using service name
+
+ kubectl get ingresses
+
+ Instead of deleting the Ingress and re-creating it from the new file, you
+ can invoke kubectl apply -f kubia-ingress-tls.yaml, which updates the
+ Ingress resource with what’s specified in the file
+
+openssl genrsa -out tls.key 2048
+openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj "//\CN=utk.example.com"
+
+kubectl create secret tls tls-secret --cert=tls.cert --key=tls.key
+
+
+

@@ -1,0 +1,4 @@
+>tasklist
+>taskkill /F /PID 5832
+netstat -na | find "5672"
+netstat -aon | find /i "tomcat"

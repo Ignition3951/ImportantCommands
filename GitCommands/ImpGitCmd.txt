@@ -1,0 +1,14 @@
+git rm -r --cached <folder>  -->remove file from staging area so that it is no more tracked
+git clean -fd  -->to change the local code to the last commit
+git cherry-pick af02e0b-->cherry pick the commit into your branch
+Run git remote -v to see the current remote URL--->
+	git remote -v
+Update the remote URL with git remote set-url using the current and new remote URLs.-->
+	git remote set-url origin git@bitbucket.org:tutorials/tutorials.git
+git revert 4945db2-->When you revert a Git commit, the changes from the targeted commit are removed from your local workspace. A new commit is also created to reflect the new state of your repository.
+
+git checkout -b feature-branch abc1234-->This will create a new branch called feature-branch starting from the commit abc1234 and switch to it immediately.
+
+Change the last commit message after push:
+git commit --amend
+git push --force-with-lease origin master

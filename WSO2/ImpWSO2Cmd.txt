@@ -1,0 +1,52 @@
+Changes done in settings file:
+C:\wso2am-4.4.0\repository\deployment\server\webapps\publisher\site\public\conf\settings.json
+C:\wso2am-4.4.0\repository\deployment\server\webapps\devportal\site\public\theme\settings.json
+C:\wso2am-4.4.0\repository\deployment\server\webapps\admin\site\public\conf\settings.json
+
+CHANGE localhost to domain name:  "origin": {
+            "host": "dev.api.corp.com"
+        },
+
+
+Changes done in deployment.toml
+
+CREATE NEW KEYSTORE:
+
+keytool -genkey -alias utk.wso2.com -keyalg RSA -keysize 2048 -keystore utkwso2.jks -validity 4000
+
+keytool -genkey -alias utk.wso21.com -keyalg RSA -keysize 2048 -keystore utkwso21.jks -validity 4000
+
+
+EXPORT PUBLIC certificate from the keystore:
+
+keytool -exportcert -alias utk.wso2.com -keystore utkwso2.jks -rfc -file utkwso2.pem
+
+keytool -export -alias utk.wso21.com -keystore utkwso21.jks -file utkwso21.pem
+
+delete certificate:
+
+keytool -delete -alias utk.wso2.com -keystore keystore-name
+keytool -delete -alias utk.wso2.com -keystore client-truststore.jks
+
+
+Import that certificate to the client-truststore.jks:
+
+keytool -import -alias utk.wso2.com -file utkwso2.pem -keystore client-truststore.jks
+
+keytool -import -alias utk.wso21.com -file utkwso21.pem -keystore client-truststore.jks
+
+First generating p12 file with wso2carbon password.
+
+keytool -importkeystore -srckeystore utkwso21.jks -srcalias utk.wso21.com -destalias wso2carbon -destkeystore wsdemo.p12 -deststoretype PKCS12 -deststorepass wso2carbon -destkeypass wso2carbon
+
+Then importing the wsdemo.p12 file to wso2carbon.jks
+
+keytool -v -importkeystore -srckeystore wsdemo.p12 -srcstoretype PKCS12 -destkeystore wso2carbon.jks -deststoretype JKS
+
+Hostfile entries:
+
+
+Restart Server:
+
+
+

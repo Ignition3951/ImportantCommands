@@ -1,0 +1,37 @@
+Installation link for kafka:
+	https://tecadmin.net/how-to-install-apache-kafka-on-ubuntu-22-04/#:~:text=This%20tutorial%20provides%20you%20with%20step-by-step%20instructions%20to,account%20access%20to%20the%20Ubuntu%2022.04%20Linux%20system.
+
+First install java in ubuntu lts server:
+	https://tecadmin.net/how-to-install-java-on-ubuntu-22-04/
+
+change the wget in the above link from:
+	wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
+to:
+	wget https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.deb
+
+If you have installed multiple Java versions on a single system, go to the next step to change the default Java version with update-alternatives CLI on a Ubuntu system:
+	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-17/bin/java 100
+
+Download kafka:
+	wget https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz --> (this process is not working)
+
+Alternate approach link: (after the jvm installation as it was successful)
+	(https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-20-04)
+
+	sudo adduser kafka--> (Password is : Password)
+	sudo adduser kafka sudo
+	mkdir ~/Downloads
+	curl "https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz" -o ~/Downloads/kafka.tgz --> 
+	curl "https://archive.apache.org/dist/kafka/2.8.2/kafka_2.13-2.8.2.tgz" -o ~/Downloads/kafka.tgz --> (changing the link to this worked https://archive.apache.org/dist/kafka/2.8.2/kafka_2.13-2.8.2.tgz)
+	mkdir ~/kafka && cd ~/kafka
+	tar -xvzf ~/Downloads/kafka.tgz --strip 1  --> (You specify the --strip 1 flag to ensure that the archive’s contents are extracted in ~/kafka/ itself and not in another directory (such as ~/kafka/kafka_2.13-2.8.2/) inside of it.)
+	nano ~/kafka/config/server.properties (paste the value [delete.topic.enable = true] and logs path as well)
+	nano /etc/systemd/system/zookeeper.service (Copy the data provided on the site)
+	nano /etc/systemd/system/kafka.service (Copy the data provided on the site)
+	sudo systemctl start kafka --> to start kafka
+	sudo systemctl status kafka --> to check status of kafka
+
+To check the messages in the topic :
+	./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic --from-beginning --max-messages 10
+	
+	

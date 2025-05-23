@@ -1,0 +1,29 @@
+Steps to connect on ssh:
+https://www.golinuxcloud.com/ssh-into-virtualbox-vm/: 
+	ss -ntlp | grep -i ssh --> to check which port is being used by ssh
+	## Check if UFW is active
+	sudo ufw status
+
+	## If the above command returns 'inactive', enable UFW using:
+	sudo ufw enable
+
+	## Allow SSH service (port 22)
+	sudo ufw allow ssh
+
+	## Reload UFW rules (if needed)
+	sudo ufw reload
+
+Steps to allow to connect to mysql server running on server:
+
+	ufw status--> to check the status
+	To make port 3306 allowed use:
+
+	ufw allow 3306--> to open the port for connection
+
+Find the file by name:
+	find –name “kafka_2.13-4.0.0.tgz”
+	find –iname “kafka\*”
+	find / -type d -name 'docker' -->(the first parameter "/" is where to look, in this case "/" it's the entire 						system.
+						-name could be -iname to ignore case
+						also -type is not mandatory. Directories will not be listed because we're specifically telling it to look for files 						only, with -type f.)
+

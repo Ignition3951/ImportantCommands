@@ -1,0 +1,24 @@
+Steps to create root user and grant previliges:
+(https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+
+	sudo mysql
+	
+	mysql -u root -p
+
+	CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+
+	GRANT ALL PRIVILEGES ON mydb.* TO 'myuser'@'%' WITH GRANT OPTION;
+
+	CREATE USER 'auth_user'@'DESKTOP-O9PORRS.bbrouter' IDENTIFIED BY 'auth_password';
+	GRANT ALL PRIVILEGES ON authservice.* TO 'auth_user'@'DESKTOP-O9PORRS.bbrouter';
+	FLUSH PRIVILEGES;
+
+Show users of database:
+	SELECT user FROM mysql.user;
+	SELECT User, Host, authentication_string FROM mysql.user;
+
+Delete a user:
+	DROP USER 'auth_user'@'localhost';
+
+
+	
