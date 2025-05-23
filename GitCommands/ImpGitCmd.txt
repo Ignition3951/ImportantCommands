@@ -19,3 +19,22 @@ git diff --staged or git diff --cached
 If you have staged all the commits then git diff will show you no changes as it only shows you the changes that are still unstaged.
 
 
+If you want to skip the staging area then the following command can be used:
+git commit -a -m 'added new benchmarks'
+
+If you want to keep files in the working directory but dont want git to track them:
+git rm --cached README
+
+If you want to see the difference between commits limited to 2:
+git log -p -2
+
+Print changes in oneline:
+git log --pretty=oneline
+
+If you want to see the commits in your own format and graph structure:
+git log --pretty=format:"%h %s" --graph
+
+
+This command gets the list of commits made in the last two weeks:
+$ git log --since=2.weeks
+
