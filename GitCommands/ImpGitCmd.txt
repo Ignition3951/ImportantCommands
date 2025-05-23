@@ -71,6 +71,8 @@ $ git config --global alias.last 'log -1 HEAD'-->(This way, you can see the last
 
 How does git know which branch you are? --> It keeps a special pointer called HEAD
 
+Switching the branches will also change the working directory.
+
 
 
 
