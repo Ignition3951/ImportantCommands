@@ -54,6 +54,20 @@ NOTE: Important It’s important to understand that git checkout -- [file] is a 
 made to that file are gone—you just copied another file over it. Don’t ever use this command unless you absolutely know
 that you don’t want the file.
 
+DIFFERENCE BETWEEN FETCH AND PULL:
+It’s important to note that the git fetch command pulls the data to your local repository—it doesn’t automatically
+merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your
+work when you’re ready.
+
+Running git pull generally fetches data from the server you originally cloned from and
+automatically tries to merge it into the code you’re currently working on.
+
+You can create your own alias for the commands which you use frequently:
+git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit--> (instead of typing git commit, you just need to type git ci.)
+$ git config --global alias.st status
+
 
 
 
