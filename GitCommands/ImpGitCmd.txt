@@ -69,7 +69,6 @@ $ git config --global alias.ci commit--> (instead of typing git commit, you just
 $ git config --global alias.st status
 $ git config --global alias.last 'log -1 HEAD'-->(This way, you can see the last commit easily:)
 
-
-
+Changing in master branch to diverge branches.
 
 
