@@ -71,4 +71,4 @@ $ git config --global alias.last 'log -1 HEAD'-->(This way, you can see the last
 
 Changing in master branch to diverge branches.
 
-
+git checkout -b iss53 --> create and switch to a new branch 
