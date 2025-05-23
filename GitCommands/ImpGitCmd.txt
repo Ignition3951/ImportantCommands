@@ -71,4 +71,6 @@ $ git config --global alias.last 'log -1 HEAD'-->(This way, you can see the last
 
 Changing in master branch to diverge branches.
 
-git checkout -b iss53 --> create and switch to a new branch 
+git checkout -b iss53 --> create and switch to a new branch
+
+If you merge and the commit can be found by travelling in the history of commits you want to merge then simply the pointer is moved forward which is known as fasat-forward in git.
