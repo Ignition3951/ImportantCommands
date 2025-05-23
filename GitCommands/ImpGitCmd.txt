@@ -12,3 +12,10 @@ git checkout -b feature-branch abc1234-->This will create a new branch called fe
 Change the last commit message after push:
 git commit --amend
 git push --force-with-lease origin master
+
+If you want to know what will go in the next commit:
+git diff --staged or git diff --cached
+
+If you have staged all the commits then git diff will show you no changes as it only shows you the changes that are still unstaged.
+
+
