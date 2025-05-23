@@ -70,7 +70,7 @@ $ git config --global alias.st status
 $ git config --global alias.last 'log -1 HEAD'-->(This way, you can see the last commit easily:)
 
 Changing in master branch to diverge branches.
-=======
+
 How does git know which branch you are? --> It keeps a special pointer called HEAD
 
 Switching the branches will also change the working directory.
@@ -78,3 +78,17 @@ Switching the branches will also change the working directory.
 git checkout -b iss53 --> create and switch to a new branch
 
 If you merge and the commit can be found by travelling in the history of commits you want to merge then simply the pointer is moved forward which is known as fasat-forward in git.
+
+To see the last commit on each branch run the following command:
+git branch -v
+
+To see which branches are already merged into the branch you’re on, you can run:
+git branch --merged
+
+To see all the branches that contain work you haven’t yet merged in, you can run:
+git branch --no-merged
+
+git push origin serverfix:serverfix, which does the same thing – it says, “Take my serverfix and
+make it the remote’s serverfix.”
+
+
