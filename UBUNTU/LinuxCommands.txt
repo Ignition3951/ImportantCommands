@@ -27,3 +27,7 @@ Find the file by name:
 						-name could be -iname to ignore case
 						also -type is not mandatory. Directories will not be listed because we're specifically telling it to look for files 						only, with -type f.)
 
+
+If you want to put the local files in the server:
+	scp -P 22 SpringDockerExample-0.0.1-SNAPSHOT.jar utk131189@192.168.1.112:/tmp
+
