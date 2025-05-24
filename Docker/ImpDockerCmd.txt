@@ -44,6 +44,7 @@ Trying to run a java program inside docker:
 	After running the above command the container will run and exit --> the container will not be shown by "docker ps" command
 	as it has already exited we have to use "docker ps -a" to show the container
 	The container created can be found on the path "/var/lib/docker/containers". This will be having all the details regarding the particular container.
+	The container logs can be checked by: docker logs <container-name>
 	
 	
 
