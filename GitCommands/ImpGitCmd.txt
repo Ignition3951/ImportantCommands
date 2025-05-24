@@ -91,4 +91,16 @@ git branch --no-merged
 git push origin serverfix:serverfix, which does the same thing – it says, “Take my serverfix and
 make it the remote’s serverfix.”
 
+This gives you a local branch that you can work on that starts where origin/serverfix is:
+$ git checkout -b serverfix origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'
+
+
+If you want the latest numbers as to how your branches are faring compared to the remote branches then use the following command:
+git fetch --all
+git branch -vv
+
+
+
 
