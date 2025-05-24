@@ -101,6 +101,8 @@ If you want the latest numbers as to how your branches are faring compared to th
 git fetch --all
 git branch -vv
 
-
+Git rebase in action:
+	git rebase --onto master server client --> (“Check out the client branch, figure out the patches from the common ancestor of the client
+and server branches, and then replay them onto master.” It’s a bit complex, but the result is pretty cool.)
 
 
