@@ -45,6 +45,13 @@ Trying to run a java program inside docker:
 	as it has already exited we have to use "docker ps -a" to show the container
 	The container created can be found on the path "/var/lib/docker/containers". This will be having all the details regarding the particular container.
 	The container logs can be checked by: docker logs <container-name>
+
+Install the docker compose command:
+	Link to be followed(https://www.geeksforgeeks.org/fix-the-docker-compose-command-not-found-error/):
+
+	sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	docker-compose --version--->(Check with this command to ensure the installation is correct)
 	
 	
 
