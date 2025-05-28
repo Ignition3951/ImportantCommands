@@ -20,5 +20,8 @@ Show users of database:
 Delete a user:
 	DROP USER 'auth_user'@'localhost';
 
+How to check the previliges of a user ona table in sql:
+	SELECT * FROM information_schema.SCHEMA_PRIVILEGES WHERE GRANTEE = "'username'@'host'";
+
 
 	
