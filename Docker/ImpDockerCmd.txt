@@ -53,8 +53,11 @@ Install the docker compose command:
 	sudo chmod +x /usr/local/bin/docker-compose
 	docker-compose --version--->(Check with this command to ensure the installation is correct)
 
-To up the compose file we use the following command:
-	docker-compose -f docker-compose-mysql-only.yml up
+To up/down the compose file we use the following command:
+	docker-compose -f docker-compose-mysql-only.yml up--> (the file path used is /etc/docker)
+	docker-compose -f docker-compose.prod.yml up -d
+	docker-compose -f docker-compose.prod.yml down
+	
 	
 	
 
