@@ -57,6 +57,9 @@ To up/down the compose file we use the following command:
 	docker-compose -f docker-compose-mysql-only.yml up--> (the file path used is /etc/docker)
 	docker-compose -f docker-compose.prod.yml up -d
 	docker-compose -f docker-compose.prod.yml down
+
+To know the IP Address of the containers:
+	docker inspect <container-name> | grep IPAddress
 	
 	
 	

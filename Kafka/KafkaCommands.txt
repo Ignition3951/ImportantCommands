@@ -32,7 +32,7 @@ Alternate approach link: (after the jvm installation as it was successful)
 	sudo systemctl status kafka --> to check status of kafka
 
 To check the messages in the topic :
-	./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic multiType --from-beginning --max-messages 10 -- > (the path in the server is home/kafka/kafka/bin)
+	./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic multiType --from-beginning --max-messages 10 	-- > (the path in the server is home/kafka/kafka/bin) --> in server or VM the path is usr/bin and command starts 	from kafka-console-consumer
 
 Erros faced while using kafka on 26th May:
 	InconsistentClusterId Exception was occuring and the server was closing:
