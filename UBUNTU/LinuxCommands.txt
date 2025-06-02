@@ -31,6 +31,9 @@ Find the file by name:
 If you want to put the local files in the server:
 	scp -P 2222 SpringDockerExample-0.0.1-SNAPSHOT.jar utk131189@192.168.1.112:/tmp
 
+If you want to copy files from the remote system into the local folder:
+	scp -r -P 2222 utk131189@192.168.1.47:/etc/docker/services/kafkaservice C:\Commands\Docker\Remotefolder
+
 If you want to ssh into the remote system:
 	ssh -p 2222 utk131189@192.168.1.47
 
