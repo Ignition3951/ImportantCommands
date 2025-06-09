@@ -9,6 +9,8 @@ Steps to create root user and grant previliges:
 
 	GRANT ALL PRIVILEGES ON mydb.* TO 'myuser'@'%' WITH GRANT OPTION;
 
+    	GRANT SELECT ON transactionservice.* TO 'username'@'localhost';
+
 	CREATE USER 'auth_user'@'DESKTOP-O9PORRS.bbrouter' IDENTIFIED BY 'auth_password';
 	GRANT ALL PRIVILEGES ON authservice.* TO 'auth_user'@'DESKTOP-O9PORRS.bbrouter';
 	FLUSH PRIVILEGES;

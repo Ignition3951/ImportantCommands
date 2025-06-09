@@ -1,0 +1,20 @@
+The first step is to setup an environment in python:
+	python -m venv .venv --> to create virtual environment
+	.venv\Scripts\activate--> for windows
+	while running the above command faced unauthorized issues:
+		resolution: Try executing Set-ExecutionPolicy Unrestricted -Scope Process in your PowerShell window. (This 			    resolved the issue)
+	Faced import module errors in the visual studio code setup while running main.py file:
+		Resolution: Go to interpreters (by typing in the search bar >interpreter)
+			    Then select the interpreter path by selecting the pythonw.exe in Scripts
+
+For langchaing installed:
+	pip install langchain
+	pip install python-dotenv
+
+For creating a controller in python:
+	pip install Flask
+
+For creating an application in python with kafka integration:
+	
+	
+	

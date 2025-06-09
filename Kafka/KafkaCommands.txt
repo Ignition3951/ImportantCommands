@@ -36,6 +36,6 @@ To check the messages in the topic :
 
 Erros faced while using kafka on 26th May:
 	InconsistentClusterId Exception was occuring and the server was closing:
-	Resolution : There was  afile in /home/kafka/logs called meta.properties which was moved to bkp file and the issue was resolved
+	Resolution : There was  a file in /home/kafka/logs called meta.properties which was moved to bkp file and the issue was resolved
 	
 	
