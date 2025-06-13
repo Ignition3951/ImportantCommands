@@ -37,3 +37,6 @@ If you want to copy files from the remote system into the local folder:
 If you want to ssh into the remote system:
 	ssh -p 2222 utk131189@192.168.1.47
 
+To store the output of a command in a file:
+	e.g. (to find a file and log the output to output.txt the command is) --> find / -type f -name "meta*" > output.txt
+
