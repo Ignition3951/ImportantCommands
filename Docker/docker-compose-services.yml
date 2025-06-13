@@ -56,6 +56,34 @@ services:
     depends_on:
       - mysqldb
       - kafka
+  authservice:
+    image: authservice
+    container_name: authservice
+    ports:
+      - "9898:9898"
+    depends_on:
+      - mysqldb
+      - kafka
+    environment:
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      KAFKA_HOST: kafka
+      KAFKA_PORT: '9092'
+  transactionservice:
+    image: transactionservice
+    container_name: transactionservice
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysqldb
+      - kafka
+    environment:
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      KAFKA_HOST: kafka
+      KAFKA_PORT: '9092'
   reverse-proxy:
     image: nginx:latest
     container_name: nginxcontainer
@@ -65,6 +93,8 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - kafkaservice
+      - authservice
+      - transactionservice
 # Names our volume
 volumes:
   my-db:
