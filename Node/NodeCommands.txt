@@ -1,0 +1,48 @@
+First ensure that you have node installed on your computer:
+	node --version
+	
+Faced error while executin npm and had to run:
+	Set-ExecutionPolicy Unrestricted -Scope Process
+
+Check if npm is installed after running the above command:
+	npm
+
+To create a new app use the following command:
+	npx @react-native-community/cli  init ExpenseTrackerApp
+
+Run instructions for Android:
+    • Have an Android emulator running (quickest way to get started), or a device connected.
+    • cd "C:\ReactProjects\ExpenseTrackerApp" && npx react-native run-android
+
+Run instructions for Windows:
+    • See https://aka.ms/ReactNativeGuideWindows for the latest up-to-date instructions.
+
+Setup the development environment for android emulator on windows:
+	https://reactnative.dev/docs/set-up-your-environment?platform=android
+
+Facing error in the build for which I used this link:
+	
+
+Was not able to pair my physical device with the android studio for which I used this link:
+	https://www.repeato.app/resolving-android-studio-wi-fi-pairing-issues-on-windows/#:~:text=Follow%20these%20steps%3A%201%20Open%20Android%20Studio%20and,by%20Windows%20Defender%2C%20allow%20network%20access%20to%20ADB.
+
+Command to get the app up and running once the physical device is connected:
+	npx react-native run-android
+
+Using gluestack ui:
+	
+
+Using react navigation:
+	npm install @react-navigation/native
+	npm install react-native-screens react-native-safe-area-context
+	npm install @react-navigation/native-stack
+	npm install @react-navigation/elements
+
+Start development using this link:
+	https://reactnavigation.org/docs/hello-react-navigation
+
+Faced an issue in which the the following string was printing:
+	"this package itself specifies a `main` module field that could not be resolved"--resolved it by just restarting the metro server
+
+
+	
