@@ -1,0 +1,8 @@
+To see whether the nginx is running in windows:
+	tasklist /fi "imagename eq nginx.exe"
+
+Run nginx.exe with different configuration file:
+	nginx.exe -c confv1/nginx.conf -- > (run the command in the following folder structure <C:\Windows\System32\cmd.exe>)
+
+Important links:
+	https://www.vladsiv.com/posts/nginx-reverse-proxy-lua-scripting
