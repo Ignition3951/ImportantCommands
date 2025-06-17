@@ -60,7 +60,30 @@ To up/down the compose file we use the following command:
 
 To know the IP Address of the containers:
 	docker inspect <container-name> | grep IPAddress
-	
-	
+
+
+Explaination of the docker command given:
+	docker run -it --rm -d -p 8080:80 --name web nginx	(if port 8080 is not available then change the port by th following command: docker run -it --rm -d -p 8082:80 --name web nginx)
+
+	Here's what each part means:
+	docker run: This is the basic Docker command to create and run a new container.
+
+	-it: Combines two flags:
+
+	-i keeps STDIN open, which is useful for interactive sessions.
+
+	-t allocates a pseudo-TTY, giving you a terminal interface.
+
+	--rm: Automatically removes the container when it exits. Handy for keeping your system tidy.
+
+	-d: Runs the container in detached mode, so it runs in the background.
+
+	-p 8080:80: Maps port 8080 on your host machine to port 80 inside the container, which is where Nginx listens by 	default.
+
+	--name web: Gives the container a custom name—web, in this case.
+
+	nginx: Specifies the image to use—here, it's the official Nginx web server.
 	
 
+To go inside the conatiner running the new image that was pulled by docker pull of nginx lua:
+	docker exec -it webserver /bin/sh
