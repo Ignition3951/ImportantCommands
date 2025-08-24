@@ -1,0 +1,8 @@
+The auth token is stored at the location:
+	Authtoken saved to configuration file: C:\Users\UTKARSH\AppData\Local/ngrok/ngrok.yml
+
+Important link:
+	https://dashboard.ngrok.com/get-started/setup/windows
+
+To create a tunnel:
+	ngrok http http://localhost:8080 --> to create a tunnel for service running on 8080

@@ -1,0 +1,17 @@
+To run a project run:
+	npx expo start
+
+Important Link:
+	https://docs.expo.dev/tutorial/follow-up/
+
+Important link to make development buils:
+	https://docs.expo.dev/tutorial/eas/configure-development-build/
+
+To make a new project using expo:
+	npx create-expo-app@latest <Project_Name>
+        cd <ProjectName>
+
+	npm run reset-project--> to reduce the project to bare minimum and start from scratch
+	npx expo start --> to start the project
+
+	npx expo install @react-native-async-storage/async-storage--> to install async storage to store values in phone

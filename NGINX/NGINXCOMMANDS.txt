@@ -3,6 +3,9 @@ To see whether the nginx is running in windows:
 
 Run nginx.exe with different configuration file:
 	nginx.exe -c confv1/nginx.conf -- > (run the command in the following folder structure <C:\Windows\System32\cmd.exe>)
+OR
+	nginx.exe -p . -c conf/nginx.conf --> 
 
+NOTE: We have used open-resty as it integrates nginx with lua language and the path is <C:\openresty-1.27.1.2-win64>
 Important links:
 	https://www.vladsiv.com/posts/nginx-reverse-proxy-lua-scripting
